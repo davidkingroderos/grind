@@ -8,7 +8,9 @@
     Shell.FlyoutBehavior="{OnPlatform Android=Flyout,
                                       iOS=Flyout,
                                       MacCatalyst=Locked,
-                                      WinUI=Locked}">
+                                      WinUI=Locked}"
+    Shell.NavBarIsVisible="{OnPlatform WinUI=False,
+                                       Default=True}">
 
     <Shell.FlyoutFooter />
 
@@ -16,7 +18,6 @@
         <ShellContent
             Title="About"
             ContentTemplate="{DataTemplate view:AboutPage}"
-            Route="MainPage" />
+            Route="AboutPage" />
     </FlyoutItem>
-
 </Shell>

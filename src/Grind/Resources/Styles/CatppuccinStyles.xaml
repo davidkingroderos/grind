@@ -10,7 +10,7 @@
     </Style>
 
     <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
-        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LatteMantle}, Dark={StaticResource MacchiatoCrust}}" />
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LatteCrust}, Dark={StaticResource MacchiatoCrust}}" />
     </Style>
 
     <Style ApplyToDerivedTypes="True" TargetType="Button">
