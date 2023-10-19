@@ -5,11 +5,18 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Grind"
     xmlns:view="clr-namespace:Grind.View"
-    Shell.FlyoutBehavior="Flyout">
+    Shell.FlyoutBehavior="{OnPlatform Android=Flyout,
+                                      iOS=Flyout,
+                                      MacCatalyst=Locked,
+                                      WinUI=Locked}">
 
-    <ShellContent
-        Title="About"
-        ContentTemplate="{DataTemplate view:AboutPage}"
-        Route="MainPage" />
+    <Shell.FlyoutFooter />
+
+    <FlyoutItem Title="About">
+        <ShellContent
+            Title="About"
+            ContentTemplate="{DataTemplate view:AboutPage}"
+            Route="MainPage" />
+    </FlyoutItem>
 
 </Shell>

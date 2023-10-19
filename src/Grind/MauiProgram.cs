@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Grind.View;
+using Microsoft.Extensions.Logging;
 
 namespace Grind
 {
@@ -18,6 +19,8 @@ namespace Grind
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddSingleton<AboutPage>();
 
             return builder.Build();
         }
