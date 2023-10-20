@@ -1,4 +1,6 @@
-﻿using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Windowing;
+using Microsoft.UI;
+using Microsoft.UI.Xaml;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -18,6 +20,23 @@ namespace Grind.WinUI
         {
             this.InitializeComponent();
         }
+
+
+//        public void SetWinNoResizable()
+//        {
+//            Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow),
+//                                                                        (handler, view) =>
+//                                                                        {
+//#if WINDOWS
+//                                                                            var nativeWindow = handler.PlatformView;
+//                                                                            IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(nativeWindow);
+//                                                                            WindowId WindowId = Win32Interop.GetWindowIdFromWindow(windowHandle);
+//                                                                            AppWindow appWindow = AppWindow.GetFromWindowId(WindowId);
+//                                                                            var presenter = appWindow.Presenter as OverlappedPresenter;
+//                                                                            presenter.IsResizable = false;
+//#endif
+//                                                                        });
+//        }
 
         protected override MauiApp CreateMauiApp() => MauiProgram.CreateMauiApp();
     }
