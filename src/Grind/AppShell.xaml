@@ -13,9 +13,9 @@
                                        Default=True}"
     Shell.TabBarIsVisible="True">
 
-    <FlyoutItem Title="Tracker">
+    <FlyoutItem Title="Home">
         <ShellContent
-            Title="Tracker"
+            Title="Trackers"
             ContentTemplate="{DataTemplate view:TrackersPage}"
             Icon="{AppThemeBinding Light=activity_light.svg,
                                    Dark=activity_dark.svg}"
