@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grind.ViewModel
+namespace Grind.Services
 {
-    public class AddRoutineViewModel : BaseViewModel
+    public class RoutineService
     {
     }
 }

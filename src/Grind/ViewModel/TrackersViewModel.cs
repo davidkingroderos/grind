@@ -10,7 +10,6 @@ namespace Grind.ViewModel
 {
     public partial class TrackersViewModel : BaseViewModel
     {
-
         [RelayCommand]
         private async Task GoToAddTrackerAsync()
         {

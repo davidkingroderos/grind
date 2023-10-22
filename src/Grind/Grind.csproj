@@ -58,11 +58,6 @@
 	  <None Remove="Resources\Images\circle_plus_light.svg" />
 	  <None Remove="Resources\Images\tool_dark.svg" />
 	  <None Remove="Resources\Images\tool_light.svg" />
-	  <None Remove="View\tool_dark.svg" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiImage Include="View\tool_dark.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -85,6 +80,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\AddRoutinePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\AddTaskPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\AddTrackerPage.xaml">

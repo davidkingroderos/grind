@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Grind.ViewModel
 {
-    public class AddRoutineViewModel : BaseViewModel
+    public partial class AddTaskViewModel : BaseViewModel
     {
+        
     }
 }
