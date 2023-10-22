@@ -14,22 +14,29 @@
     Shell.TabBarIsVisible="True">
 
     <FlyoutItem Title="Tracker">
-        <Tab>
-            <ShellContent
-                Title="Trackers"
-                ContentTemplate="{DataTemplate view:TrackersPage}"
-                Route="TrackersPage" />
-            <ShellContent
-                Title="Routine"
-                ContentTemplate="{DataTemplate view:RoutinePage}"
-                Route="TrackersPage" />
-        </Tab>
+        <ShellContent
+            Title="Tracker"
+            ContentTemplate="{DataTemplate view:TrackersPage}"
+            Route="TrackersPage" />
+        <ShellContent
+            Title="Tasks"
+            ContentTemplate="{DataTemplate view:TasksPage}"
+            Route="Tasks" />
+        <ShellContent
+            Title="Tools"
+            ContentTemplate="{DataTemplate view:ToolsPage}"
+            Route="ToolsPage" />
+        <ShellContent
+            Title="Routines"
+            ContentTemplate="{DataTemplate view:RoutinesPage}"
+            Route="RoutinesPage" />
     </FlyoutItem>
 
-    <FlyoutItem Title="About">
+    <FlyoutItem Title="About" Shell.TabBarIsVisible="False">
         <ShellContent
             Title="About"
             ContentTemplate="{DataTemplate view:AboutPage}"
             Route="AboutPage" />
     </FlyoutItem>
+
 </Shell>
