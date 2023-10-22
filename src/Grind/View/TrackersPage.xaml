@@ -3,6 +3,8 @@
     x:Class="Grind.View.TrackersPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:Grind.Model"
+    xmlns:viewmodel="clr-namespace:Grind.ViewModel"
     Title="Tracker">
 
     <ContentPage.ToolbarItems>
