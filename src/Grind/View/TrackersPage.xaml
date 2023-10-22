@@ -5,10 +5,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:model="clr-namespace:Grind.Model"
     xmlns:viewmodel="clr-namespace:Grind.ViewModel"
-    Title="Tracker">
+    Title="Tracker"
+    x:DataType="viewmodel:TrackersViewModel">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
+        <ToolbarItem Command="{Binding GoToAddTrackerCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
     </ContentPage.ToolbarItems>
 
     <VerticalStackLayout>
