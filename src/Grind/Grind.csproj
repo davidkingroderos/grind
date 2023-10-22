@@ -49,7 +49,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\activity_dark.svg" />
+	  <None Remove="Resources\Images\activity_light.svg" />
+	  <None Remove="Resources\Images\calendar_time_dark.svg" />
+	  <None Remove="Resources\Images\calendar_time_light.svg" />
+	  <None Remove="Resources\Images\checklist_dark.svg" />
+	  <None Remove="Resources\Images\checklist_light.svg" />
 	  <None Remove="Resources\Images\circle_plus_light.svg" />
+	  <None Remove="Resources\Images\tool_dark.svg" />
+	  <None Remove="Resources\Images\tool_light.svg" />
+	  <None Remove="View\tool_dark.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="View\tool_dark.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -69,6 +82,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\AboutPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\AddRoutinePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\AddTrackerPage.xaml">

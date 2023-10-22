@@ -17,18 +17,26 @@
         <ShellContent
             Title="Tracker"
             ContentTemplate="{DataTemplate view:TrackersPage}"
+            Icon="{AppThemeBinding Light=activity_light.svg,
+                                   Dark=activity_dark.svg}"
             Route="TrackersPage" />
         <ShellContent
             Title="Tasks"
             ContentTemplate="{DataTemplate view:TasksPage}"
+            Icon="{AppThemeBinding Light=checklist_light.svg,
+                                   Dark=checklist_dark.svg}"
             Route="Tasks" />
         <ShellContent
             Title="Tools"
             ContentTemplate="{DataTemplate view:ToolsPage}"
+            Icon="{AppThemeBinding Light=tool_light.svg,
+                                   Dark=tool_dark.svg}"
             Route="ToolsPage" />
         <ShellContent
             Title="Routines"
             ContentTemplate="{DataTemplate view:RoutinesPage}"
+            Icon="{AppThemeBinding Light=calendar_time_light.svg,
+                                   Dark=calendar_time_dark.svg}"
             Route="RoutinesPage" />
     </FlyoutItem>
 

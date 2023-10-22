@@ -6,11 +6,11 @@
         <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Light={StaticResource LatteText}, Dark={StaticResource MacchiatoText}}" />
         <Setter Property="Shell.FlyoutBackground" Value="{AppThemeBinding Light={StaticResource LatteMantle}, Dark={StaticResource MacchiatoMantle}}" />
         <Setter Property="Shell.FlyoutBackgroundColor" Value="{AppThemeBinding Light={StaticResource LatteCrust}, Dark={StaticResource MacchiatoCrust}}" />
-        <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Light={StaticResource LatteCrust}, Dark={StaticResource MacchiatoCrust}}" />
+        <Setter Property="Shell.UnselectedColor" Value="{AppThemeBinding Light={StaticResource LatteSubtext0}, Dark={StaticResource MacchiatoSubtext0}}" />
     </Style>
 
     <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
-        
+
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LatteCrust}, Dark={StaticResource MacchiatoCrust}}" />
     </Style>
 
