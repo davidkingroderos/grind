@@ -22,6 +22,7 @@ namespace Grind
 #endif
 
             builder.Services.AddSingleton<TrackersPage>();
+            builder.Services.AddSingleton<RoutinesPage>();
             builder.Services.AddSingleton<TasksPage>();
             builder.Services.AddSingleton<AboutPage>();
 

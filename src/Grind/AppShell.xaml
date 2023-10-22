@@ -10,13 +10,20 @@
                                       MacCatalyst=Locked,
                                       WinUI=Locked}"
     Shell.NavBarIsVisible="{OnPlatform WinUI=False,
-                                       Default=True}">
+                                       Default=True}"
+    Shell.TabBarIsVisible="True">
 
     <FlyoutItem Title="Tracker">
-        <ShellContent
-            Title="Trackers"
-            ContentTemplate="{DataTemplate view:TrackersPage}"
-            Route="TrackersPage" />
+        <Tab>
+            <ShellContent
+                Title="Trackers"
+                ContentTemplate="{DataTemplate view:TrackersPage}"
+                Route="TrackersPage" />
+            <ShellContent
+                Title="Routine"
+                ContentTemplate="{DataTemplate view:RoutinePage}"
+                Route="TrackersPage" />
+        </Tab>
     </FlyoutItem>
 
     <FlyoutItem Title="About">
