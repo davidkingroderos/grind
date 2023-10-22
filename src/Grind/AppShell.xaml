@@ -12,7 +12,12 @@
     Shell.NavBarIsVisible="{OnPlatform WinUI=False,
                                        Default=True}">
 
-    <Shell.FlyoutFooter />
+    <FlyoutItem Title="Tracker">
+        <ShellContent
+            Title="Trackers"
+            ContentTemplate="{DataTemplate view:TrackersPage}"
+            Route="TrackersPage" />
+    </FlyoutItem>
 
     <FlyoutItem Title="About">
         <ShellContent

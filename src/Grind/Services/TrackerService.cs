@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Grind.Model
+namespace Grind.Services
 {
-    public class Routine
+    public class TrackerService
     {
     }
 }
