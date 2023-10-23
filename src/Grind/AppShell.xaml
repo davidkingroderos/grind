@@ -21,8 +21,8 @@
                                    Dark=activity_dark.svg}"
             Route="TrackersPage" />
         <ShellContent
-            Title="Tasks"
-            ContentTemplate="{DataTemplate view:TasksPage}"
+            Title="Todos"
+            ContentTemplate="{DataTemplate view:TodosPage}"
             Icon="{AppThemeBinding Light=checklist_light.svg,
                                    Dark=checklist_dark.svg}"
             Route="Tasks" />

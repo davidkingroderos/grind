@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Grind.ViewModel
 {
-    public partial class TasksViewModel : BaseViewModel
+    public partial class TodosViewModel : BaseViewModel
     {
         [RelayCommand]
-        private async Task GoToAddTaskAsync()
+        private async Task GoToAddTodoAsync()
         {
-            await Shell.Current.GoToAsync($"{nameof(AddTaskPage)}", true);
+            await Shell.Current.GoToAsync($"{nameof(AddTodoPage)}", true);
         }
     }
 }
