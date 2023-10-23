@@ -34,9 +34,15 @@ namespace Grind.ViewModel
         public string color;
 
         [RelayCommand]
-        private async Task AddTaskAsync()
+        private async Task AddTodoAsync()
         {
+            if (Name is null || Name.Equals(""))
+            {
+                await Shell.Current.CurrentPage.DisplayAlert("Empty Name",
+                    "Please enter a name of your todo", "OK");
 
+                return;
+            }
         }
     }
 }

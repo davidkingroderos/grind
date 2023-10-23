@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Grind.Services
 {
-    public class TrackerService
+    public class TodoService
     {
         private static SQLiteAsyncConnection Database;
 
@@ -19,7 +19,7 @@ namespace Grind.Services
                 return;
             }
 
-            string databaseFilename = "Trackers_db";
+            string databaseFilename = "Todos_db";
             string databasePath = Path.Combine(FileSystem.AppDataDirectory, databaseFilename);
 
             SQLite.SQLiteOpenFlags flags =
@@ -29,47 +29,46 @@ namespace Grind.Services
 
             Database = new SQLiteAsyncConnection(databasePath, flags);
 
-            await Database.CreateTableAsync<Tracker>();
+            await Database.CreateTableAsync<Todo>();
         }
 
-        public static async Task AddTrackerAsync(Tracker tracker)
+        public static async Task AddTodoAsync(Todo todo)
         {
             await Init();
 
-            await Database.InsertAsync(tracker);
+            await Database.InsertAsync(todo);
         }
 
-        public static async Task RemoveTrackerAsync(int id)
+        public static async Task RemoveTodoAsync(int id)
         {
             await Init();
 
-            await Database.DeleteAsync<Tracker>(id);
+            await Database.DeleteAsync<Todo>(id);
         }
 
-        public static async Task<Tracker> GetTrackerAsync(int id)
+        public static async Task<Todo> GetTodoAsync(int id)
         {
             await Init();
 
-            var tracker = await Database.GetAsync<Tracker>(id);
+            var todo = await Database.GetAsync<Todo>(id);
 
-            return tracker;
+            return todo;
         }
 
-        public static async Task<IEnumerable<Tracker>> GetTrackersAsync()
+        public static async Task<IEnumerable<Todo>> GetTodosAsync()
         {
             await Init();
 
-            var tracker = await Database.Table<Tracker>().ToListAsync();
+            var todo = await Database.Table<Todo>().ToListAsync();
 
-            return tracker;
+            return todo;
         }
 
-        public static async Task UpdateTrackerAsync(Tracker tracker)
+        public static async Task UpdateTodoAsync(Todo todo)
         {
             await Init();
 
-            await Database.UpdateAsync(tracker);
+            await Database.UpdateAsync(todo);
         }
-
     }
 }
