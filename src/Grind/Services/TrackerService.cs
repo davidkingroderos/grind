@@ -70,6 +70,5 @@ namespace Grind.Services
 
             await Database.UpdateAsync(tracker);
         }
-
     }
 }
