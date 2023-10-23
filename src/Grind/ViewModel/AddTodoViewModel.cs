@@ -8,5 +8,9 @@ namespace Grind.ViewModel
 {
     public class AddTodoViewModel : BaseViewModel
     {
+        public AddTodoViewModel()
+        {
+            Title = "Add Todo";
+        }
     }
 }

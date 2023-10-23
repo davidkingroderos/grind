@@ -10,6 +10,7 @@ namespace Grind
 
             Routing.RegisterRoute(nameof(AddTrackerPage), typeof(AddTrackerPage));
             Routing.RegisterRoute(nameof(AddTaskPage), typeof(AddTaskPage));
+            Routing.RegisterRoute(nameof(AddTodoPage), typeof(AddTodoPage));
         }
     }
 }
