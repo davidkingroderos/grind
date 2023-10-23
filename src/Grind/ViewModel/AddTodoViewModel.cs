@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Grind.ViewModel
 {
-    public partial class AddTaskViewModel : BaseViewModel
+    public partial class AddTodoViewModel : BaseViewModel
     {
-        public AddTaskViewModel()
+        public AddTodoViewModel()
         {
-            Title = "Add Task";
+            Title = "Add Todo";
         }
 
         [ObservableProperty]

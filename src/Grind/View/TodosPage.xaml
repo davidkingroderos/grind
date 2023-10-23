@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="Grind.View.TasksPage"
+    x:Class="Grind.View.TodosPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewmodel="clr-namespace:Grind.ViewModel"
-    Title="Tasks"
-    x:DataType="viewmodel:TasksViewModel">
+    Title="To Dos"
+    x:DataType="viewmodel:TodosViewModel">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Command="{Binding GoToAddTaskCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
+        <ToolbarItem Command="{Binding GoToAddTodoCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
     </ContentPage.ToolbarItems>
     <VerticalStackLayout>
         <Label
             HorizontalOptions="Center"
-            Text="Welcome to Tasks"
+            Text="Welcome to Todos"
             VerticalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>
