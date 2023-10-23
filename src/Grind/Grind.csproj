@@ -67,6 +67,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Resources\Styles\CatppuccinColors.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\CatppuccinLatteColors.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

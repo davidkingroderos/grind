@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary
+    x:Class="Grind.Resources.Styles.CatppuccinColors"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Color x:Key="Rosewater">#dc8a78</Color>
+    <Color x:Key="Flamingo">#dd7878</Color>
+    <Color x:Key="Pink">#ea76cb</Color>
+    <Color x:Key="Mauve">#8839ef</Color>
+    <Color x:Key="Red">#d20f39</Color>
+    <Color x:Key="Maroon">#e64553</Color>
+    <Color x:Key="Peach">#fe640b</Color>
+    <Color x:Key="Yellow">#df8e1d</Color>
+    <Color x:Key="Green">#40a02b</Color>
+    <Color x:Key="Teal">#179299</Color>
+    <Color x:Key="Sky">#04a5e5</Color>
+    <Color x:Key="Sapphire">#209fb5</Color>
+    <Color x:Key="Blue">#1e66f5</Color>
+    <Color x:Key="Lavender">#7287fd</Color>
+    <Color x:Key="Text">#4c4f69</Color>
+    <Color x:Key="Subtext1">#5c5f77</Color>
+    <Color x:Key="Subtext0">#6c6f85</Color>
+    <Color x:Key="Overlay2">#7c7f93</Color>
+    <Color x:Key="Overlay1">#8c8fa1</Color>
+    <Color x:Key="Overlay0">#9ca0b0</Color>
+    <Color x:Key="Surface2">#acb0be</Color>
+    <Color x:Key="Surface1">#bcc0cc</Color>
+    <Color x:Key="Surface0">#ccd0da</Color>
+    <Color x:Key="Base">#eff1f5</Color>
+    <Color x:Key="Mantle">#e6e9ef</Color>
+    <Color x:Key="Crust">#dce0e8</Color>
+</ResourceDictionary>
