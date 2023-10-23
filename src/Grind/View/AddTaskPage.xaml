@@ -10,7 +10,7 @@
         <Entry Placeholder="Name" Text="{Binding Name}" />
         <Entry Placeholder="Description" Text="{Binding Description}" />
         <DatePicker Date="{Binding DeadlineDate}" />
-        <Picker Title="Color" SelectedIndex="{Binding }">
+        <Picker Title="Color" SelectedItem="{Binding Color}">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Rosewater</x:String>
