@@ -30,6 +30,9 @@ namespace Grind.ViewModel
         [ObservableProperty]
         public string deadlineDate;
 
+        [ObservableProperty]
+        public string color;
+
         [RelayCommand]
         private async Task AddTaskAsync()
         {

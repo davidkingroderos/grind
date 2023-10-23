@@ -3,10 +3,15 @@
     x:Class="Grind.View.TrackersPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
     xmlns:model="clr-namespace:Grind.Model"
     xmlns:viewmodel="clr-namespace:Grind.ViewModel"
     Title="Trackers"
     x:DataType="viewmodel:TrackersViewModel">
+
+    <Page.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="{AppThemeBinding Light={StaticResource LatteCrust}, Dark={StaticResource MacchiatoCrust}}" StatusBarStyle="{AppThemeBinding Dark=LightContent, Light=DarkContent}" />
+    </Page.Behaviors>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding GoToAddTrackerCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />

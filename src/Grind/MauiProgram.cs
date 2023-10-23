@@ -1,4 +1,4 @@
-﻿using AndroidX.ConstraintLayout.Core.Widgets.Analyzer;
+﻿using CommunityToolkit.Maui;
 using Grind.Controls;
 using Grind.View;
 using Grind.ViewModel;
@@ -13,6 +13,7 @@ namespace Grind
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
