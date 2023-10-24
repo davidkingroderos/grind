@@ -8,5 +8,9 @@ namespace Grind.ViewModel
 {
     public partial class RoutinesViewModel : BaseViewModel
     {
+        public RoutinesViewModel()
+        {
+            Title = "Routines";
+        }
     }
 }

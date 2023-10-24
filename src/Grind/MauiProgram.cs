@@ -54,8 +54,9 @@ namespace Grind
             builder.Services.AddSingleton<TodosViewModel>();
             builder.Services.AddSingleton<ToolsViewModel>();
             builder.Services.AddSingleton<RoutinesViewModel>();
-            builder.Services.AddSingleton<AddRoutineViewModel>();
+            builder.Services.AddSingleton<AddTrackerViewModel>();
             builder.Services.AddSingleton<AddTodoViewModel>();
+            builder.Services.AddSingleton<AddRoutineViewModel>();
 
             return builder.Build();
         }

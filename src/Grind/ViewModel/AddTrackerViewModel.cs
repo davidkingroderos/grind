@@ -8,5 +8,9 @@ namespace Grind.ViewModel
 {
     public partial class AddTrackerViewModel : BaseViewModel
     {
+        public AddTrackerViewModel()
+        {
+            Title = "Add Tracker";
+        }
     }
 }
