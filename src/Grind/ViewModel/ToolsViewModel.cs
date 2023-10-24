@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grind.ViewModel
 {
-    internal class ToolsViewModel
+    public partial class ToolsViewModel : BaseViewModel
     {
     }
 }
