@@ -1,9 +1,13 @@
+using Grind.ViewModel;
+
 namespace Grind.View;
 
 public partial class ToolsPage : ContentPage
 {
-	public ToolsPage()
+	public ToolsPage(ToolsViewModel viewModel)
 	{
 		InitializeComponent();
+
+		BindingContext = viewModel;
 	}
 }

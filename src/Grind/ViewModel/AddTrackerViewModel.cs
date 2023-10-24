@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Grind.ViewModel
 {
-    public class AddRoutineViewModel : BaseViewModel
+    public partial class AddTrackerViewModel : BaseViewModel
     {
-        public AddRoutineViewModel()
+        public AddTrackerViewModel()
         {
-            Title = "Add Routine";
+            Title = "Add Tracker";
         }
     }
 }

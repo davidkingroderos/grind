@@ -4,10 +4,10 @@ namespace Grind.View;
 
 public partial class TrackersPage : ContentPage
 {
-	public TrackersPage()
+	public TrackersPage(TrackersViewModel viewModel)
 	{
 		InitializeComponent();
 
-		BindingContext = new TrackersViewModel();
+		BindingContext = viewModel;
 	}
 }
