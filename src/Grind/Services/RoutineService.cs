@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Grind.Model;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +19,7 @@ namespace Grind.Services
                 return;
             }
 
-            string databaseFilename = "Todos_db";
+            string databaseFilename = "Routines_db";
             string databasePath = Path.Combine(FileSystem.AppDataDirectory, databaseFilename);
 
             SQLite.SQLiteOpenFlags flags =
@@ -27,46 +29,46 @@ namespace Grind.Services
 
             Database = new SQLiteAsyncConnection(databasePath, flags);
 
-            await Database.CreateTableAsync<Todo>();
+            await Database.CreateTableAsync<Routine>();
         }
 
-        public static async Task AddTodoAsync(Todo todo)
+        public static async Task AddRoutineAsync(Routine routine)
         {
             await Init();
 
-            await Database.InsertAsync(todo);
+            await Database.InsertAsync(routine);
         }
 
-        public static async Task RemoveTodoAsync(int id)
+        public static async Task RemoveRoutineAsync(int id)
         {
             await Init();
 
-            await Database.DeleteAsync<Todo>(id);
+            await Database.DeleteAsync<Routine>(id);
         }
 
-        public static async Task<Todo> GetTodoAsync(int id)
+        public static async Task<Routine> GetRoutineAsync(int id)
         {
             await Init();
 
-            var todo = await Database.GetAsync<Todo>(id);
+            var routine = await Database.GetAsync<Routine>(id);
 
-            return todo;
+            return routine;
         }
 
-        public static async Task<IEnumerable<Todo>> GetTodosAsync()
+        public static async Task<IEnumerable<Routine>> GetRoutinesAsync()
         {
             await Init();
 
-            var todo = await Database.Table<Todo>().ToListAsync();
+            var routine = await Database.Table<Routine>().ToListAsync();
 
-            return todo;
+            return routine;
         }
 
-        public static async Task UpdateTodoAsync(Todo todo)
+        public static async Task UpdateRoutineAsync(Routine routine)
         {
             await Init();
 
-            await Database.UpdateAsync(todo);
+            await Database.UpdateAsync(routine);
         }
     }
 }

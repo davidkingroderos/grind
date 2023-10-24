@@ -10,6 +10,11 @@ namespace Grind.ViewModel
 {
     public partial class TodosViewModel : BaseViewModel
     {
+        public TodosViewModel()
+        {
+            Title = "Todos";
+        }
+
         [RelayCommand]
         private async Task GoToAddTodoAsync()
         {

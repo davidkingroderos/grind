@@ -8,5 +8,9 @@ namespace Grind.ViewModel
 {
     public partial class ToolsViewModel : BaseViewModel
     {
+        public ToolsViewModel()
+        {
+            Title = "Tools";
+        }
     }
 }
