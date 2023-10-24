@@ -4,10 +4,10 @@ namespace Grind.View;
 
 public partial class TodosPage : ContentPage
 {
-	public TodosPage()
+	public TodosPage(TodosViewModel viewModel)
 	{
 		InitializeComponent();
 
-		BindingContext = new TodosViewModel();
+		BindingContext = viewModel;
 	}
 }

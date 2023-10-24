@@ -42,12 +42,18 @@ namespace Grind
             });
 
             builder.Services.AddSingleton<TrackersPage>();
+            builder.Services.AddSingleton<TodosPage>();
+            builder.Services.AddSingleton<ToolsPage>();
             builder.Services.AddSingleton<RoutinesPage>();
             builder.Services.AddSingleton<AboutPage>();
             builder.Services.AddSingleton<AddTrackerPage>();
             builder.Services.AddSingleton<AddRoutinePage>();
+            builder.Services.AddSingleton<AddTodoPage>();
 
             builder.Services.AddSingleton<TrackersViewModel>();
+            builder.Services.AddSingleton<TodosViewModel>();
+            builder.Services.AddSingleton<ToolsViewModel>();
+            builder.Services.AddSingleton<RoutinesViewModel>();
             builder.Services.AddSingleton<AddRoutineViewModel>();
             builder.Services.AddSingleton<AddTodoViewModel>();
 
