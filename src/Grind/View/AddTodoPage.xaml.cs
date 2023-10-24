@@ -4,10 +4,10 @@ namespace Grind.View;
 
 public partial class AddTodoPage : ContentPage
 {
-	public AddTodoPage()
+	public AddTodoPage(AddTodoViewModel viewModel)
 	{
 		InitializeComponent();
 
-		BindingContext = new AddTodoViewModel();
+		BindingContext = viewModel;
 	}
 }

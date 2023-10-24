@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Grind.ViewModel
 {
-    public partial class TodosViewModel : BaseViewModel
+    public partial class RoutinesViewModel : BaseViewModel
     {
-        public TodosViewModel()
+        public RoutinesViewModel()
         {
-            Title = "Todos";
+            Title = "Routines";
         }
 
         [RelayCommand]
-        private async Task GoToAddTodoAsync()
+        private async Task GoToAddRoutineAsync()
         {
-            await Shell.Current.GoToAsync($"{nameof(AddTodoPage)}", true);
+            await Shell.Current.GoToAsync($"{nameof(AddRoutinePage)}", true);
         }
     }
 }

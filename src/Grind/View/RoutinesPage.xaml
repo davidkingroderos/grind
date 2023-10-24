@@ -3,9 +3,11 @@
     x:Class="Grind.View.RoutinesPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Routines">
+    xmlns:viewmodel="clr-namespace:Grind.ViewModel"
+    Title="{Binding Title}"
+    x:DataType="viewmodel:RoutinesViewModel">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
+        <ToolbarItem Command="{Binding GoToAddRoutineCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
     </ContentPage.ToolbarItems>
     <VerticalStackLayout>
         <Label
