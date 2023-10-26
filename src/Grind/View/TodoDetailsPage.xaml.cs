@@ -2,9 +2,9 @@ using Grind.ViewModel;
 
 namespace Grind.View;
 
-public partial class AddTrackerPage : ContentPage
+public partial class TodoDetailsPage : ContentPage
 {
-    public AddTrackerPage(AddTrackerViewModel viewModel)
+	public TodoDetailsPage(TodoDetailsViewModel viewModel)
 	{
 		InitializeComponent();
 
