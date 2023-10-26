@@ -19,7 +19,7 @@ namespace Grind.Services
                 return;
             }
 
-            string databaseFilename = "Todos_db";
+            string databaseFilename = "TodosDB";
             string databasePath = Path.Combine(FileSystem.AppDataDirectory, databaseFilename);
 
             SQLite.SQLiteOpenFlags flags =

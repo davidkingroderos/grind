@@ -47,8 +47,10 @@ namespace Grind
             builder.Services.AddSingleton<RoutinesPage>();
             builder.Services.AddSingleton<AboutPage>();
             builder.Services.AddSingleton<AddTrackerPage>();
-            builder.Services.AddSingleton<AddRoutinePage>();
             builder.Services.AddSingleton<AddTodoPage>();
+            builder.Services.AddSingleton<AddRoutinePage>();
+            builder.Services.AddSingleton<TrackerDetailsPage>();
+            builder.Services.AddSingleton<TodoDetailsPage>();
 
             builder.Services.AddSingleton<TrackersViewModel>();
             builder.Services.AddSingleton<TodosViewModel>();
@@ -57,6 +59,8 @@ namespace Grind
             builder.Services.AddSingleton<AddTrackerViewModel>();
             builder.Services.AddSingleton<AddTodoViewModel>();
             builder.Services.AddSingleton<AddRoutineViewModel>();
+            builder.Services.AddSingleton<TrackerDetailsViewModel>();
+            builder.Services.AddSingleton<TodoDetailsViewModel>();
 
             return builder.Build();
         }
