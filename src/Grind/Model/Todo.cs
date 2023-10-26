@@ -17,6 +17,5 @@ namespace Grind.Model
         public int IsCompleted { get; set; }
         public string DateCreated { get; set; }
         public string DeadlineDate { get; set; }
-
     }
 }

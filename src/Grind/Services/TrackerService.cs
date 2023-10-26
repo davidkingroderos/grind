@@ -19,7 +19,7 @@ namespace Grind.Services
                 return;
             }
 
-            string databaseFilename = "Trackers_db";
+            string databaseFilename = "TrackersDB";
             string databasePath = Path.Combine(FileSystem.AppDataDirectory, databaseFilename);
 
             SQLite.SQLiteOpenFlags flags =

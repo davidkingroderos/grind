@@ -95,6 +95,9 @@
 	  <MauiXaml Update="View\RoutinesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\TodoDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\TodosPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
