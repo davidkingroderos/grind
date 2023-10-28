@@ -31,7 +31,7 @@ namespace Grind.ViewModel
         public string dateCreated;
 
         [ObservableProperty]
-        public string deadlineDate;
+        public DateTime deadlineDate;
 
         [ObservableProperty]
         public string color;
@@ -61,12 +61,13 @@ namespace Grind.ViewModel
                 {
                     Name = Name,
                     Description = Description is null ? "" : Description,
-                    DeadlineDate = DeadlineDate is null ? DateTime.Now.ToShortDateString() : DeadlineDate,
+                    DateCreated = DateTime.Now,
+                    DeadlineDate = DeadlineDate,
                     Color = Color,
                 });
 
                 await Shell.Current.CurrentPage.DisplayAlert("Success!",
-                    $"Train schedule added", "OK");
+                    $"Todo added", "OK");
             }
             catch (Exception ex)
             {

@@ -10,6 +10,7 @@
         <Entry Placeholder="Name" Text="{Binding Name}" />
         <Entry Placeholder="Description" Text="{Binding Description}" />
         <DatePicker Date="{Binding DeadlineDate}" />
+        <TimePicker Time="{Binding DeadlineDate}" />
         <Picker Title="Color" SelectedItem="{Binding Color}">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
@@ -30,5 +31,6 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
+        <Button Command="{Binding AddTodoCommand}" Text="Add" />
     </VerticalStackLayout>
 </ContentPage>
