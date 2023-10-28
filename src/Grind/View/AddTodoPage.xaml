@@ -30,5 +30,6 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
+        <Button Command="{Binding AddTodoCommand}" Text="Add" />
     </VerticalStackLayout>
 </ContentPage>

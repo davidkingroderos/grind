@@ -66,7 +66,7 @@ namespace Grind.ViewModel
                 });
 
                 await Shell.Current.CurrentPage.DisplayAlert("Success!",
-                    $"Train schedule added", "OK");
+                    $"Todo added", "OK");
             }
             catch (Exception ex)
             {
