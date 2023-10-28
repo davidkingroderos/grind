@@ -69,6 +69,8 @@ namespace Grind.ViewModel
                 {
                     { "Todo", todo }
                 });
+
+            await GetTodosAsync();
         }
 
         [RelayCommand]
