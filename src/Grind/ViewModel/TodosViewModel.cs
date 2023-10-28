@@ -59,6 +59,21 @@ namespace Grind.ViewModel
         }
 
         [RelayCommand]
+        private async Task GoToTodoDetailsAsync(Todo todo)
+        {
+            if (todo is null)
+                return;
+
+            await Shell.Current.GoToAsync($"{nameof(TodoDetailsPage)}",
+                true, new Dictionary<string, object>
+                {
+                    { "Todo", todo }
+                });
+
+            await GetTodosAsync();
+        }
+
+        [RelayCommand]
         private async Task GoToAddTodoAsync()
         {
             await Shell.Current.GoToAsync($"{nameof(AddTodoPage)}", true);
