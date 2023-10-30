@@ -21,8 +21,7 @@
                         <Frame
                             Margin="7,10"
                             Padding="10"
-                            BackgroundColor="{AppThemeBinding Light={Binding LatteColor},
-                                                              Dark={Binding MacchiatoColor}}"
+                            BackgroundColor="{Binding LatteColor}"
                             CornerRadius="25"
                             HeightRequest="50">
                             <Frame.GestureRecognizers>

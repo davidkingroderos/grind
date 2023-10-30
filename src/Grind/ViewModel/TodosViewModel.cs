@@ -47,8 +47,8 @@ namespace Grind.ViewModel
 
                 foreach (Todo todo in todos)
                 {
-                    todo.LatteColor = CatppuccinColorConverter.GetLatteColor(todo.Color);
-                    todo.MacchiatoColor = CatppuccinColorConverter.GetMacchiatoColor(todo.Color);
+                    todo.LatteColor = CatppuccinColorConverter.GetColor(todo.Color);
+                    todo.MacchiatoColor = CatppuccinColorConverter.GetColor(todo.Color);
 
                     Todos.Add(todo);
                 }
