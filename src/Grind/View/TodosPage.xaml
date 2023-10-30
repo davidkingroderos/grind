@@ -21,14 +21,15 @@
                         <Frame
                             Margin="7,10"
                             Padding="10"
-                            BackgroundColor="{Binding LatteColor}"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource LatteSurface2},
+                                                              Dark={StaticResource MacchiatoSurface2}}"
                             CornerRadius="25"
                             HeightRequest="50">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TodosViewModel}}, Path=GoToTodoDetailsCommand}" CommandParameter="{Binding .}" />
                             </Frame.GestureRecognizers>
                             <Grid Margin="0" Padding="0">
-                                <Label Text="{Binding Id}" TextColor="{AppThemeBinding Light={StaticResource MacchiatoText}, Dark={StaticResource LatteText}}" />
+                                <Label Text="{Binding Id}" TextColor="{AppThemeBinding Light={StaticResource LatteText}, Dark={StaticResource MacchiatoText}}" />
                             </Grid>
                         </Frame>
                     </DataTemplate>
