@@ -17,5 +17,11 @@ namespace Grind.Model
         public int IsCompleted { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DeadlineDate { get; set; }
+
+        [Ignore]
+        public Color LatteColor { get; set; }
+
+        [Ignore]
+        public Color MacchiatoColor { get; set; }
     }
 }

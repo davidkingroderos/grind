@@ -26,6 +26,10 @@ namespace Grind.ViewModel
         }
 
         [ObservableProperty]
+        [Obsolete]
+        private Color aquaColor = Color.FromHex("FF6A00");
+
+        [ObservableProperty]
         private bool isRefreshing;
 
         [RelayCommand]
@@ -43,6 +47,9 @@ namespace Grind.ViewModel
 
                 foreach (Todo todo in todos)
                 {
+                    todo.LatteColor = CatppuccinColorConverter.GetLatteColor(todo.Color);
+                    todo.MacchiatoColor = CatppuccinColorConverter.GetMacchiatoColor(todo.Color);
+
                     Todos.Add(todo);
                 }
             }

@@ -12,42 +12,26 @@
         <ToolbarItem Command="{Binding GoToAddTodoCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
     </ContentPage.ToolbarItems>
 
+
     <ScrollView>
         <RefreshView Command="{Binding GetTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
             <CollectionView ItemsSource="{Binding Todos}" SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Todo">
-                        <Border
-                            Padding="0"
-                            HeightRequest="125"
-                            Stroke="{AppThemeBinding Light={StaticResource LatteText},
-                                                     Dark={StaticResource MacchiatoText}}"
-                            StrokeShape="RoundRectangle 10 40 40 10"
-                            StrokeThickness="4">
-                            <Border.Shadow>
-                                <Shadow
-                                    Brush="{AppThemeBinding Light={StaticResource LatteCrust},
-                                                            Dark={StaticResource MacchiatoCrust}}"
-                                    Opacity="0.8"
-                                    Offset="10, 10" />
-                            </Border.Shadow>
-                            <Frame Padding="20" BackgroundColor="{AppThemeBinding Light={StaticResource LatteSurface0}, Dark={StaticResource MacchiatoSurface0}}">
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TodosViewModel}}, Path=GoToTodoDetailsCommand}" CommandParameter="{Binding .}" />
-                                </Frame.GestureRecognizers>
-                                <Grid
-                                    Margin="0"
-                                    Padding="0"
-                                    ColumnDefinitions="*">
-                                    <VerticalStackLayout Grid.Column="1">
-                                        <Label Text="{Binding Id}" />
-                                        <Label Text="{Binding Name}" />
-                                        <Label Text="{Binding Description}" />
-                                        <Label Text="{Binding DeadlineDate}" />
-                                    </VerticalStackLayout>
-                                </Grid>
-                            </Frame>
-                        </Border>
+                        <Frame
+                            Margin="7,10"
+                            Padding="10"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource LatteSurface2},
+                                                              Dark={StaticResource MacchiatoSurface2}}"
+                            CornerRadius="25"
+                            HeightRequest="50">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TodosViewModel}}, Path=GoToTodoDetailsCommand}" CommandParameter="{Binding .}" />
+                            </Frame.GestureRecognizers>
+                            <Grid Margin="0" Padding="0">
+                                <Label Text="{Binding Id}" TextColor="{AppThemeBinding Light={StaticResource LatteText}, Dark={StaticResource MacchiatoText}}" />
+                            </Grid>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
