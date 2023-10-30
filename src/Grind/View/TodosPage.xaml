@@ -12,24 +12,41 @@
         <ToolbarItem Command="{Binding GoToAddTodoCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
     </ContentPage.ToolbarItems>
 
-
     <ScrollView>
         <RefreshView Command="{Binding GetTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
             <CollectionView ItemsSource="{Binding Todos}" SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Todo">
                         <Frame
-                            Margin="7,10"
-                            Padding="10"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource LatteSurface2},
-                                                              Dark={StaticResource MacchiatoSurface2}}"
-                            CornerRadius="25"
-                            HeightRequest="50">
+                            Margin="10"
+                            Padding="0"
+                            BackgroundColor="{AppThemeBinding Light={StaticResource LatteSurface0},
+                                                              Dark={StaticResource MacchiatoSurface0}}"
+                            CornerRadius="30"
+                            HeightRequest="60">
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TodosViewModel}}, Path=GoToTodoDetailsCommand}" CommandParameter="{Binding .}" />
                             </Frame.GestureRecognizers>
-                            <Grid Margin="0" Padding="0">
-                                <Label Text="{Binding Id}" TextColor="{AppThemeBinding Light={StaticResource LatteText}, Dark={StaticResource MacchiatoText}}" />
+                            <Grid
+                                Margin="0"
+                                Padding="0"
+                                ColumnDefinitions="60,*">
+                                <Image
+                                    Margin="10"
+                                    Aspect="AspectFit"
+                                    Source="{AppThemeBinding Light=circle_plus_light.svg,
+                                                             Dark=circle_plus_dark.svg}">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Label
+                                    Grid.Column="1"
+                                    FontSize="30"
+                                    Text="{Binding Name}"
+                                    TextColor="{AppThemeBinding Light={StaticResource LatteText},
+                                                                Dark={StaticResource MacchiatoText}}"
+                                    VerticalOptions="Center" />
                             </Grid>
                         </Frame>
                     </DataTemplate>
