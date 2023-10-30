@@ -21,6 +21,7 @@
         <Label
             HorizontalOptions="Center"
             Text="Welcome to Tracker"
+            TextColor="{Binding AquaColor}"
             VerticalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>
