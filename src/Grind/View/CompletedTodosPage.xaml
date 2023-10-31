@@ -12,10 +12,47 @@
         <ToolbarItem Command="{Binding GoToAddTodoCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
     </ContentPage.ToolbarItems>
 
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <StackLayout>
+            <RefreshView Command="{Binding GetTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
+                <CollectionView ItemsSource="{Binding CompletedTodos}" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="model:Todo">
+                            <Frame
+                                Margin="10,5"
+                                Padding="0"
+                                BackgroundColor="{Binding ThemeColor}"
+                                CornerRadius="30"
+                                HeightRequest="60">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TodosViewModel}}, Path=GoToTodoDetailsCommand}" CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+                                <Grid
+                                    Margin="0"
+                                    Padding="0"
+                                    ColumnDefinitions="60,*">
+                                    <Image
+                                        Margin="10"
+                                        Aspect="AspectFit"
+                                        Source="{AppThemeBinding Light=square_rounded_check_filled_dark.svg,
+                                                                 Dark=square_rounded_check_filled_light.svg}">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding .}" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label
+                                        Grid.Column="1"
+                                        FontSize="30"
+                                        Text="{Binding Name}"
+                                        TextColor="{AppThemeBinding Light={StaticResource MacchiatoText},
+                                                                    Dark={StaticResource LatteText}}"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

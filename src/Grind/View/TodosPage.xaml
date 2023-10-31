@@ -34,8 +34,8 @@
                                     <Image
                                         Margin="10"
                                         Aspect="AspectFit"
-                                        Source="{AppThemeBinding Light=square_rounded_check_filled_dark.svg,
-                                                                 Dark=square_rounded_check_filled_light.svg}">
+                                        Source="{AppThemeBinding Light=square_rounded_dark.svg,
+                                                                 Dark=square_rounded_light.svg}">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer CommandParameter="{Binding .}" />
                                         </Image.GestureRecognizers>

@@ -20,5 +20,8 @@ namespace Grind.Model
 
         [Ignore]
         public Color ThemeColor { get; set; }
+
+        [Ignore]
+        public string BoxIcon { get; set; }
     }
 }
