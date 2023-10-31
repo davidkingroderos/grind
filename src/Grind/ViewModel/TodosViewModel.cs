@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using AndroidX.ConstraintLayout.Core.Widgets.Analyzer;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Grind.Model;
 using Grind.Services;
@@ -16,6 +17,7 @@ namespace Grind.ViewModel
 {
     public partial class TodosViewModel : BaseViewModel
     {
+        public ObservableCollection<List<Todo>> TodoGroups { get; } = new();
         public ObservableCollection<Todo> Todos { get; } = new();
 
         public TodosViewModel()
@@ -31,6 +33,28 @@ namespace Grind.ViewModel
 
         [ObservableProperty]
         private bool isRefreshing;
+
+        [RelayCommand]
+        private async Task GetTodoGroupsAsync()
+        {
+            if (IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                await Shell.Current.DisplayAlert("Error!", $"Unable to get todos: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+                IsRefreshing = false;
+            }
+
+        }
 
         [RelayCommand]
         private async Task GetTodosAsync()
