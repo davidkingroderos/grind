@@ -43,6 +43,7 @@ namespace Grind
 
             builder.Services.AddSingleton<TrackersPage>();
             builder.Services.AddSingleton<TodosPage>();
+            builder.Services.AddSingleton<CompletedTodosPage>();
             builder.Services.AddSingleton<ToolsPage>();
             builder.Services.AddSingleton<RoutinesPage>();
             builder.Services.AddSingleton<AboutPage>();

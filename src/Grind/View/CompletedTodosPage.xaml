@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Grind.View.CompletedTodosPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:Grind.Model"
+    xmlns:viewmodel="clr-namespace:Grind.ViewModel"
+    Title="{Binding Title}"
+    x:DataType="viewmodel:TodosViewModel">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding GoToAddTodoCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout>
+        <Label
+            HorizontalOptions="Center"
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>
