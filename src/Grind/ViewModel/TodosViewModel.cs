@@ -52,7 +52,6 @@ namespace Grind.ViewModel
                     }
                     else
                     {
-                        CompletedTodos.Add(todo);
                     }
                 }
             }

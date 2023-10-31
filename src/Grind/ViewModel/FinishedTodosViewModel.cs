@@ -54,5 +54,32 @@ namespace Grind.ViewModel
                 IsRefreshing = false;
             }
         }
+
+        [RelayCommand]
+        private async Task MarkTodoAsUnfinishedAsync(Todo todo)
+        {
+            if (IsBusy)
+                return;
+
+            try
+            {
+                IsBusy = true;
+
+                todo.IsCompleted = 0;
+
+                await TodoService.UpdateTodoAsync(todo);
+
+                FinishedTodos.Remove(todo);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                await Shell.Current.DisplayAlert("Error!", $"Unable to mark todo as unfinished: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
     }
 }
