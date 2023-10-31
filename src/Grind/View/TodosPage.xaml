@@ -21,8 +21,7 @@
                             <Frame
                                 Margin="10,5"
                                 Padding="0"
-                                BackgroundColor="{AppThemeBinding Light={StaticResource LatteSurface0},
-                                                                  Dark={StaticResource MacchiatoSurface0}}"
+                                BackgroundColor="{Binding ThemeColor}"
                                 CornerRadius="30"
                                 HeightRequest="60">
                                 <Frame.GestureRecognizers>
@@ -35,8 +34,8 @@
                                     <Image
                                         Margin="10"
                                         Aspect="AspectFit"
-                                        Source="{AppThemeBinding Light=square_rounded_check_filled_light.svg,
-                                                                 Dark=square_rounded_check_filled_dark.svg}">
+                                        Source="{AppThemeBinding Light=square_rounded_check_filled_dark.svg,
+                                                                 Dark=square_rounded_check_filled_light.svg}">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer CommandParameter="{Binding .}" />
                                         </Image.GestureRecognizers>
@@ -45,8 +44,8 @@
                                         Grid.Column="1"
                                         FontSize="30"
                                         Text="{Binding Name}"
-                                        TextColor="{AppThemeBinding Light={StaticResource LatteText},
-                                                                    Dark={StaticResource MacchiatoText}}"
+                                        TextColor="{AppThemeBinding Light={StaticResource MacchiatoText},
+                                                                    Dark={StaticResource LatteText}}"
                                         VerticalOptions="Center" />
                                 </Grid>
                             </Frame>

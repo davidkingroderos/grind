@@ -14,7 +14,7 @@ namespace Grind.Model
         {
             var color = value.ToString();
 
-            if (Application.Current.UserAppTheme == AppTheme.Light)
+            if (Application.Current.RequestedTheme == AppTheme.Light)
             {
                 return color switch
                 {
@@ -65,7 +65,7 @@ namespace Grind.Model
 
         public static Color GetColor(string value)
         {
-            if (Application.Current.UserAppTheme.Equals(AppTheme.Light))
+            if (Application.Current.RequestedTheme == AppTheme.Light)
             {
                 return value switch
                 {

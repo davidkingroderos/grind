@@ -1,10 +1,10 @@
-﻿using AndroidX.ConstraintLayout.Core.Widgets.Analyzer;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Grind.Model;
 using Grind.Services;
 using Grind.View;
 using Microsoft.Maui.Animations;
+using MvvmHelpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,7 +17,7 @@ namespace Grind.ViewModel
 {
     public partial class TodosViewModel : BaseViewModel
     {
-        public ObservableCollection<List<Todo>> TodoGroups { get; } = new();
+        public ObservableCollection<Grouping<string, Todo>> TodoGroups { get; } = new();
         public ObservableCollection<Todo> Todos { get; } = new();
 
         public TodosViewModel()
@@ -25,36 +25,15 @@ namespace Grind.ViewModel
             Title = "Todos";
 
             _ = GetTodosAsync();
-        }
 
-        [ObservableProperty]
-        [Obsolete]
-        private Color aquaColor = Color.FromHex("FF6A00");
+            Application.Current.RequestedThemeChanged += (s, a) =>
+            {
+                _ = GetTodosAsync();
+            };
+        }
 
         [ObservableProperty]
         private bool isRefreshing;
-
-        [RelayCommand]
-        private async Task GetTodoGroupsAsync()
-        {
-            if (IsBusy) return;
-
-            try
-            {
-                IsBusy = true;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                await Shell.Current.DisplayAlert("Error!", $"Unable to get todos: {ex.Message}", "OK");
-            }
-            finally
-            {
-                IsBusy = false;
-                IsRefreshing = false;
-            }
-
-        }
 
         [RelayCommand]
         private async Task GetTodosAsync()
@@ -71,11 +50,15 @@ namespace Grind.ViewModel
 
                 foreach (Todo todo in todos)
                 {
-                    todo.LatteColor = CatppuccinColorConverter.GetLatteColor(todo.Color);
-                    todo.MacchiatoColor = CatppuccinColorConverter.GetMacchiatoColor(todo.Color);
+                    todo.ThemeColor = CatppuccinColorConverter.GetColor(todo.Color);
 
                     Todos.Add(todo);
                 }
+
+                TodoGroups.Clear();
+
+                TodoGroups.Add(new Grouping<string, Todo>("Todo", Todos.Where(t => t.IsCompleted == 0)));
+                TodoGroups.Add(new Grouping<string, Todo>("Completed", Todos.Where(t => t.IsCompleted == 1)));
             }
             catch (Exception ex)
             {
