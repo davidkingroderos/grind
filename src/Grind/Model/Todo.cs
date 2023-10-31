@@ -19,9 +19,6 @@ namespace Grind.Model
         public DateTime DeadlineDate { get; set; }
 
         [Ignore]
-        public Color LatteColor { get; set; }
-
-        [Ignore]
-        public Color MacchiatoColor { get; set; }
+        public Color ThemeColor { get; set; }
     }
 }
