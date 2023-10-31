@@ -49,13 +49,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\circle-check-filled.svg" />
+	  <None Remove="Resources\Fonts\circle.svg" />
 	  <None Remove="Resources\Images\activity_dark.svg" />
 	  <None Remove="Resources\Images\activity_light.svg" />
 	  <None Remove="Resources\Images\calendar_time_dark.svg" />
 	  <None Remove="Resources\Images\calendar_time_light.svg" />
+	  <None Remove="Resources\Images\checkbox_dark.svg" />
+	  <None Remove="Resources\Images\checkbox_light.svg" />
 	  <None Remove="Resources\Images\checklist_dark.svg" />
 	  <None Remove="Resources\Images\checklist_light.svg" />
 	  <None Remove="Resources\Images\circle_plus_light.svg" />
+	  <None Remove="Resources\Images\square_rounded_check_filled_dark.svg" />
+	  <None Remove="Resources\Images\square_rounded_check_filled_light.svg" />
+	  <None Remove="Resources\Images\square_rounded_dark.svg" />
+	  <None Remove="Resources\Images\square_rounded_light.svg" />
 	  <None Remove="Resources\Images\tool_dark.svg" />
 	  <None Remove="Resources\Images\tool_light.svg" />
 	</ItemGroup>
