@@ -4,7 +4,7 @@ namespace Grind.View;
 
 public partial class TodosPage : ContentPage
 {
-	public TodosPage(TodosViewModel viewModel)
+	public TodosPage(UnfinishedTodosViewModel viewModel)
 	{
 		InitializeComponent();
 
@@ -15,11 +15,11 @@ public partial class TodosPage : ContentPage
     {
         base.OnNavigatedTo(args);
 
-		var viewModel = BindingContext as TodosViewModel;
+		var viewModel = BindingContext as UnfinishedTodosViewModel;
 
-		if (viewModel.GetTodosCommand.CanExecute(null))
+		if (viewModel.GetUnfinishedTodosCommand.CanExecute(null))
 		{
-			viewModel.GetTodosCommand.Execute(null);
+			viewModel.GetUnfinishedTodosCommand.Execute(null);
 		}
     }
 }

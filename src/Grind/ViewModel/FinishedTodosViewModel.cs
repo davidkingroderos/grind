@@ -1,0 +1,58 @@
+﻿using CommunityToolkit.Mvvm.Input;
+using Grind.Model;
+using Grind.Services;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Grind.ViewModel
+{
+    public partial class FinishedTodosViewModel : TodosViewModel
+    {
+        public ObservableCollection<Todo> FinishedTodos { get; set; } = new();
+
+        public FinishedTodosViewModel()
+        {
+            Application.Current.RequestedThemeChanged += async (s, a) => await GetFinishedTodosAsync();
+        }
+
+        [RelayCommand]
+        private async Task GetFinishedTodosAsync()
+        {
+            if (IsBusy)
+                return;
+
+            try
+            {
+                IsBusy = true;
+
+                FinishedTodos.Clear();
+
+                var finishedTodos = await TodoService.GetTodosAsync();
+
+                foreach (Todo todo in finishedTodos)
+                {
+                    if (todo.IsCompleted == 1)
+                    {
+                        todo.ThemeColor = CatppuccinColorConverter.GetColor(todo.Color);
+                        FinishedTodos.Add(todo);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                await Shell.Current.DisplayAlert("Error!", $"Unable to get finished todos: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+                IsRefreshing = false;
+            }
+        }
+    }
+}

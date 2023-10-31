@@ -4,7 +4,7 @@ namespace Grind.View;
 
 public partial class CompletedTodosPage : ContentPage
 {
-	public CompletedTodosPage(TodosViewModel viewModel)
+	public CompletedTodosPage(FinishedTodosViewModel viewModel)
 	{
 		InitializeComponent();
 
@@ -15,11 +15,11 @@ public partial class CompletedTodosPage : ContentPage
     {
         base.OnNavigatedTo(args);
 
-		var viewModel = BindingContext as TodosViewModel;
+		var viewModel = BindingContext as FinishedTodosViewModel;
 
-		if (viewModel.GetTodosCommand.CanExecute(null))
+		if (viewModel.GetFinishedTodosCommand.CanExecute(null))
 		{
-			viewModel.GetTodosCommand.Execute(null);
+			viewModel.GetFinishedTodosCommand.Execute(null);
 		}
     }
 }

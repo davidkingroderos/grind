@@ -6,7 +6,7 @@
     xmlns:model="clr-namespace:Grind.Model"
     xmlns:viewmodel="clr-namespace:Grind.ViewModel"
     Title="{Binding Title}"
-    x:DataType="viewmodel:TodosViewModel">
+    x:DataType="viewmodel:UnfinishedTodosViewModel">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding GoToAddTodoCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
@@ -14,8 +14,8 @@
 
     <ScrollView>
         <StackLayout>
-            <RefreshView Command="{Binding GetTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
-                <CollectionView ItemsSource="{Binding Todos}" SelectionMode="None">
+            <RefreshView Command="{Binding GetUnfinishedTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
+                <CollectionView ItemsSource="{Binding UnfinishedTodos}" SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Todo">
                             <Frame

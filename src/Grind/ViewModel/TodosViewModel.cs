@@ -19,18 +19,10 @@ namespace Grind.ViewModel
     {
         public ObservableCollection<Grouping<string, Todo>> TodoGroups { get; } = new();
         public ObservableCollection<Todo> Todos { get; } = new();
-        public ObservableCollection<Todo> CompletedTodos { get; } = new();
 
         public TodosViewModel()
         {
             Title = "Todos";
-
-            _ = GetTodosAsync();
-
-            Application.Current.RequestedThemeChanged += (s, a) =>
-            {
-                _ = GetTodosAsync();
-            };
         }
 
         [ObservableProperty]
@@ -47,7 +39,6 @@ namespace Grind.ViewModel
                 IsBusy = true;
 
                 Todos.Clear();
-                CompletedTodos.Clear();
 
                 var todos = await TodoService.GetTodosAsync();
 
