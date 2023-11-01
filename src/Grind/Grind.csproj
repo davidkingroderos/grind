@@ -78,8 +78,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\Todos\FinishedUnfinishedTodosPage.xaml.cs">
-	    <DependentUpon>FinishedUnfinishedTodosPage.xaml</DependentUpon>
+	  <Compile Update="Views\Todos\FinishedTodosPage.xaml.cs">
+	    <DependentUpon>FinishedTodosPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\Todos\UnfinishedUnfinishedTodosPage.xaml.cs">
 	    <DependentUpon>UnfinishedUnfinishedTodosPage.xaml</DependentUpon>
@@ -111,7 +111,7 @@
 	  <MauiXaml Update="Views\Trackers\AddTrackerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Todos\FinishedUnfinishedTodosPage.xaml">
+	  <MauiXaml Update="Views\Todos\FinishedTodosPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Routines\RoutinesPage.xaml">

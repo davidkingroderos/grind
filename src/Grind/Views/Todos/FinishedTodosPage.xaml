@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="Grind.Views.FinishedUnfinishedTodosPage"
+    x:Class="Grind.Views.FinishedTodosPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:model="clr-namespace:Grind.Models"
@@ -12,10 +12,30 @@
         <ToolbarItem Command="{Binding GoToAddTodoCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
+    <ScrollView Margin="0,10,0,0">
         <StackLayout>
             <RefreshView Command="{Binding GetFinishedTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
-                <CollectionView ItemsSource="{Binding FinishedTodos}" SelectionMode="None">
+                <CollectionView
+                    IsGrouped="True"
+                    ItemsSource="{Binding FinishedTodoGroups}"
+                    SelectionMode="None">
+                    <CollectionView.GroupHeaderTemplate>
+                        <DataTemplate x:DataType="model:TodoGroup">
+                            <Grid ColumnDefinitions="*,Auto">
+                                <HorizontalStackLayout Grid.Column="0">
+                                    <Ellipse
+                                        Margin="10,0"
+                                        Fill="{Binding Color}"
+                                        HeightRequest="30"
+                                        WidthRequest="30" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="30"
+                                        Text="{Binding Name}" />
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.GroupHeaderTemplate>
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Todo">
                             <Frame

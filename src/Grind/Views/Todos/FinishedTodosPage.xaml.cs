@@ -2,9 +2,9 @@ using Grind.ViewsModels;
 
 namespace Grind.Views;
 
-public partial class FinishedUnfinishedTodosPage : ContentPage
+public partial class FinishedTodosPage : ContentPage
 {
-	public FinishedUnfinishedTodosPage(FinishedTodosViewModel viewModel)
+	public FinishedTodosPage(FinishedTodosViewModel viewModel)
 	{
 		InitializeComponent();
 
