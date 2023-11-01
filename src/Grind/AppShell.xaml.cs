@@ -1,4 +1,4 @@
-﻿using Grind.View;
+﻿using Grind.Views;
 
 namespace Grind
 {
