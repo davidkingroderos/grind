@@ -93,34 +93,34 @@
 	  <MauiXaml Update="Views\AboutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AddRoutinePage.xaml">
+	  <MauiXaml Update="Views\Routines\AddRoutinePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AddTodoPage.xaml">
+	  <MauiXaml Update="Views\Todos\AddTodoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AddTrackerPage.xaml">
+	  <MauiXaml Update="Views\Trackers\AddTrackerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\CompletedTodosPage.xaml">
+	  <MauiXaml Update="Views\Todos\CompletedTodosPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\RoutinesPage.xaml">
+	  <MauiXaml Update="Views\Routines\RoutinesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\TodoDetailsPage.xaml">
+	  <MauiXaml Update="Views\Todos\TodoDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\TodosPage.xaml">
+	  <MauiXaml Update="Views\Todos\TodosPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ToolsPage.xaml">
+	  <MauiXaml Update="Views\Tools\ToolsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\TrackerDetailsPage.xaml">
+	  <MauiXaml Update="Views\Trackers\TrackerDetailsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\TrackersPage.xaml">
+	  <MauiXaml Update="Views\Trackers\TrackersPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
