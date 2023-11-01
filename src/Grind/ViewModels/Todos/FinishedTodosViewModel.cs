@@ -15,7 +15,7 @@ namespace Grind.ViewsModels
     public partial class FinishedTodosViewModel : TodosViewModel
     {
         public ObservableCollection<Todo> FinishedTodos { get; set; } = new();
-        public ObservableCollection<Grouping<string, Todo>> FinishedTodoGroups { get; set; } = new();
+        public ObservableCollection<TodoGroup> FinishedTodoGroups { get; set; } = new();
 
         public FinishedTodosViewModel()
         {
@@ -52,7 +52,8 @@ namespace Grind.ViewsModels
 
                 foreach (string finishedTodoColor in finishedTodoColors)
                 {
-                    FinishedTodoGroups.Add(new Grouping<string, Todo>(finishedTodoColor, FinishedTodos.Where(t => t.Color == finishedTodoColor)));
+                    var finishedTodoGroup = FinishedTodos.Where(t => t.Color == finishedTodoColor);
+                    FinishedTodoGroups.Add(new TodoGroup(finishedTodoColor, new ObservableCollection<Todo>(finishedTodoGroup)));
                 }
             }
             catch (Exception ex)
@@ -95,7 +96,8 @@ namespace Grind.ViewsModels
 
                 foreach (string finishedTodoColor in finishedTodoColors)
                 {
-                    FinishedTodoGroups.Add(new Grouping<string, Todo>(finishedTodoColor, FinishedTodos.Where(t => t.Color == finishedTodoColor)));
+                    var finishedTodoGroup = FinishedTodos.Where(t => t.Color == finishedTodoColor);
+                    FinishedTodoGroups.Add(new TodoGroup(finishedTodoColor, new ObservableCollection<Todo>(finishedTodoGroup)));
                 }
             }
             catch (Exception ex)

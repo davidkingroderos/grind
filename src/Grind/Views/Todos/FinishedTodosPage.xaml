@@ -12,7 +12,7 @@
         <ToolbarItem Command="{Binding GoToAddTodoCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
+    <ScrollView Margin="0,10,0,0">
         <StackLayout>
             <RefreshView Command="{Binding GetFinishedTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
                 <CollectionView
@@ -20,13 +20,19 @@
                     ItemsSource="{Binding FinishedTodoGroups}"
                     SelectionMode="None">
                     <CollectionView.GroupHeaderTemplate>
-                        <DataTemplate x:DataType="{x:Null}">
-                            <Grid Margin="10,0" ColumnDefinitions="*,Auto">
-                                <Label
-                                    Grid.Column="0"
-                                    FontAttributes="Bold"
-                                    FontSize="30"
-                                    Text="{Binding Key}" />
+                        <DataTemplate x:DataType="model:TodoGroup">
+                            <Grid ColumnDefinitions="*,Auto">
+                                <HorizontalStackLayout Grid.Column="0">
+                                    <Ellipse
+                                        Margin="10,0"
+                                        Fill="{Binding Color}"
+                                        HeightRequest="30"
+                                        WidthRequest="30" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="30"
+                                        Text="{Binding Name}" />
+                                </HorizontalStackLayout>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.GroupHeaderTemplate>
