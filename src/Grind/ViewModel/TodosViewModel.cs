@@ -23,13 +23,6 @@ namespace Grind.ViewModel
         public TodosViewModel()
         {
             Title = "Todos";
-
-            _ = GetTodosAsync();
-
-            Application.Current.RequestedThemeChanged += (s, a) =>
-            {
-                _ = GetTodosAsync();
-            };
         }
 
         [ObservableProperty]
@@ -46,19 +39,21 @@ namespace Grind.ViewModel
                 IsBusy = true;
 
                 Todos.Clear();
+
                 var todos = await TodoService.GetTodosAsync();
 
                 foreach (Todo todo in todos)
                 {
                     todo.ThemeColor = CatppuccinColorConverter.GetColor(todo.Color);
 
-                    Todos.Add(todo);
+                    if (todo.IsCompleted == 0)
+                    {
+                        Todos.Add(todo);
+                    }
+                    else
+                    {
+                    }
                 }
-
-                TodoGroups.Clear();
-
-                TodoGroups.Add(new Grouping<string, Todo>("Todo", Todos.Where(t => t.IsCompleted == 0)));
-                TodoGroups.Add(new Grouping<string, Todo>("Completed", Todos.Where(t => t.IsCompleted == 1)));
             }
             catch (Exception ex)
             {

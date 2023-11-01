@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="Grind.View.TodosPage"
+    x:Class="Grind.View.CompletedTodosPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:model="clr-namespace:Grind.Model"
     xmlns:viewmodel="clr-namespace:Grind.ViewModel"
     Title="{Binding Title}"
-    x:DataType="viewmodel:UnfinishedTodosViewModel">
+    x:DataType="viewmodel:FinishedTodosViewModel">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Command="{Binding GoToAddTodoCommand}" IconImageSource="{AppThemeBinding Light=circle_plus_light.svg, Dark=circle_plus_dark.svg}" />
@@ -14,8 +14,8 @@
 
     <ScrollView>
         <StackLayout>
-            <RefreshView Command="{Binding GetUnfinishedTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
-                <CollectionView ItemsSource="{Binding UnfinishedTodos}" SelectionMode="None">
+            <RefreshView Command="{Binding GetFinishedTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
+                <CollectionView ItemsSource="{Binding FinishedTodos}" SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Todo">
                             <Frame
@@ -34,10 +34,10 @@
                                     <Image
                                         Margin="10"
                                         Aspect="AspectFit"
-                                        Source="{AppThemeBinding Light=square_rounded_dark.svg,
-                                                                 Dark=square_rounded_light.svg}">
+                                        Source="{AppThemeBinding Light=square_rounded_check_filled_dark.svg,
+                                                                 Dark=square_rounded_check_filled_light.svg}">
                                         <Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:UnfinishedTodosViewModel}}, Path=MarkTodoAsFinishedCommand}" CommandParameter="{Binding .}" />
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:FinishedTodosViewModel}}, Path=MarkTodoAsUnfinishedCommand}" CommandParameter="{Binding .}" />
                                         </Image.GestureRecognizers>
                                     </Image>
                                     <Label
