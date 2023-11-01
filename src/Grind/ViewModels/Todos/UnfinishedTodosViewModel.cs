@@ -82,7 +82,7 @@ namespace Grind.ViewsModels
 
                 UnfinishedTodos.Remove(todo);
 
-                // This part of the code can be optimized by removing an item in a group
+                // This part of the code can be optimized by just removing an item in a group not clearing the whole todo
                 UnfinishedTodoGroups.Clear();
 
                 HashSet<string> unfinishedTodoColors = new();
