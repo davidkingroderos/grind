@@ -32,9 +32,9 @@ namespace Grind.ViewsModels
 
                 FinishedTodos.Clear();
 
-                var finishedTodos = await TodoService.GetTodosAsync();
+                var todos = await TodoService.GetTodosAsync();
 
-                foreach (Todo todo in finishedTodos)
+                foreach (Todo todo in todos)
                 {
                     if (todo.IsCompleted == 1)
                     {

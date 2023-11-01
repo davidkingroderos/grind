@@ -15,7 +15,10 @@
     <ScrollView>
         <StackLayout>
             <RefreshView Command="{Binding GetUnfinishedTodosCommand}" IsRefreshing="{Binding IsRefreshing}">
-                <CollectionView ItemsSource="{Binding UnfinishedTodos}" SelectionMode="None">
+                <CollectionView
+                    IsGrouped="True"
+                    ItemsSource="{Binding UnfinishedTodoGroups}"
+                    SelectionMode="None">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Todo">
                             <Frame

@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Grind.Models;
 using Grind.Services;
+using MvvmHelpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,6 +15,7 @@ namespace Grind.ViewsModels
     public partial class UnfinishedTodosViewModel : TodosViewModel
     {
         public ObservableCollection<Todo> UnfinishedTodos { get; set; } = new();
+        public ObservableCollection<Grouping<string, Todo>> UnfinishedTodoGroups { get; set; } = new();
 
         public UnfinishedTodosViewModel()
         {
@@ -31,16 +33,25 @@ namespace Grind.ViewsModels
                 IsBusy = true;
 
                 UnfinishedTodos.Clear();
+                UnfinishedTodoGroups.Clear();
 
-                var unfinishedTodos = await TodoService.GetTodosAsync();
+                var todos = await TodoService.GetTodosAsync();
+                HashSet<string> unfinishedTodoColors = new();
 
-                foreach (Todo todo in unfinishedTodos)
+                foreach (Todo todo in todos)
                 {
                     if (todo.IsCompleted == 0)
                     {
+                        unfinishedTodoColors.Add(todo.Color);
+
                         todo.ThemeColor = CatppuccinColorConverter.GetColor(todo.Color);
                         UnfinishedTodos.Add(todo);
                     }
+                }
+
+                foreach (string unfinishedTodoColor in unfinishedTodoColors)
+                {
+                    UnfinishedTodoGroups.Add(new Grouping<string, Todo>(unfinishedTodoColor, UnfinishedTodos.Where(t => t.Color == unfinishedTodoColor)));
                 }
             }
             catch (Exception ex)
@@ -70,6 +81,21 @@ namespace Grind.ViewsModels
                 await TodoService.UpdateTodoAsync(todo);
 
                 UnfinishedTodos.Remove(todo);
+
+                // This part of the code can be optimized by removing an item in a group
+                UnfinishedTodoGroups.Clear();
+
+                HashSet<string> unfinishedTodoColors = new();
+
+                foreach (Todo unfinishedTodo in UnfinishedTodos)
+                {
+                    unfinishedTodoColors.Add(unfinishedTodo.Color);
+                }
+
+                foreach (string unfinishedTodoColor in unfinishedTodoColors)
+                {
+                    UnfinishedTodoGroups.Add(new Grouping<string, Todo>(unfinishedTodoColor, UnfinishedTodos.Where(t => t.Color == unfinishedTodoColor)));
+                }
             }
             catch (Exception ex)
             {
