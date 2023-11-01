@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Grind.Controls;
-using Grind.View;
-using Grind.ViewModel;
+using Grind.Views;
+using Grind.ViewsModels;
 using Microsoft.Extensions.Logging;
 
 namespace Grind
@@ -42,8 +42,8 @@ namespace Grind
             });
 
             builder.Services.AddSingleton<TrackersPage>();
-            builder.Services.AddSingleton<TodosPage>();
-            builder.Services.AddSingleton<CompletedTodosPage>();
+            builder.Services.AddSingleton<UnfinishedTodosPage>();
+            builder.Services.AddSingleton<FinishedUnfinishedTodosPage>();
             builder.Services.AddSingleton<ToolsPage>();
             builder.Services.AddSingleton<RoutinesPage>();
             builder.Services.AddSingleton<AboutPage>();

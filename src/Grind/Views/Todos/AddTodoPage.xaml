@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Grind.Views.AddTodoPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:Grind.ViewsModels"
+    Title="{Binding Title}"
+    x:DataType="viewmodel:AddTodoViewModel">
+    <VerticalStackLayout>
+        <Entry Placeholder="Name" Text="{Binding Name}" />
+        <Entry Placeholder="Description" Text="{Binding Description}" />
+        <DatePicker Date="{Binding DeadlineDate}" />
+        <TimePicker Time="{Binding DeadlineDate}" />
+        <Picker Title="Color" SelectedItem="{Binding Color}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Rosewater</x:String>
+                    <x:String>Flamingo</x:String>
+                    <x:String>Pink</x:String>
+                    <x:String>Mauve</x:String>
+                    <x:String>Red</x:String>
+                    <x:String>Maroon</x:String>
+                    <x:String>Peach</x:String>
+                    <x:String>Yellow</x:String>
+                    <x:String>Green</x:String>
+                    <x:String>Teal</x:String>
+                    <x:String>Sky</x:String>
+                    <x:String>Sapphire</x:String>
+                    <x:String>Blue</x:String>
+                    <x:String>Lavender</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button Command="{Binding AddTodoCommand}" Text="Add" />
+    </VerticalStackLayout>
+</ContentPage>

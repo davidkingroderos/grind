@@ -1,0 +1,13 @@
+using Grind.ViewsModels;
+
+namespace Grind.Views;
+
+public partial class TrackerDetailsPage : ContentPage
+{
+	public TrackerDetailsPage(TrackerDetailsViewModel viewModel)
+	{
+		InitializeComponent();
+
+		BindingContext = viewModel;
+	}
+}

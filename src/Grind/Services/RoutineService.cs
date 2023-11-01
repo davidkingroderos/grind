@@ -1,4 +1,4 @@
-﻿using Grind.Model;
+﻿using Grind.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
