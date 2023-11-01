@@ -31,7 +31,7 @@
                 Route="Todo" />
             <ShellContent
                 Title="Finished"
-                ContentTemplate="{DataTemplate view:FinishedUnfinishedTodosPage}"
+                ContentTemplate="{DataTemplate view:FinishedTodosPage}"
                 Icon="{AppThemeBinding Light=checklist_light.svg,
                                        Dark=checklist_dark.svg}"
                 Route="Finished" />

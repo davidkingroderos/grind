@@ -19,6 +19,17 @@
                     IsGrouped="True"
                     ItemsSource="{Binding UnfinishedTodoGroups}"
                     SelectionMode="None">
+                    <CollectionView.GroupHeaderTemplate>
+                        <DataTemplate x:DataType="{x:Null}">
+                            <Grid Margin="10,0" ColumnDefinitions="*,Auto">
+                                <Label
+                                    Grid.Column="0"
+                                    FontAttributes="Bold"
+                                    FontSize="30"
+                                    Text="{Binding Key}" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.GroupHeaderTemplate>
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="model:Todo">
                             <Frame
