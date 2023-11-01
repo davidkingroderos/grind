@@ -50,9 +50,9 @@ namespace Grind.ViewsModels
                     }
                 }
 
-                foreach (string unfinishedTodoColor in finishedTodoColors)
+                foreach (string finishedTodoColor in finishedTodoColors)
                 {
-                    FinishedTodoGroups.Add(new Grouping<string, Todo>(unfinishedTodoColor, FinishedTodos.Where(t => t.Color == unfinishedTodoColor)));
+                    FinishedTodoGroups.Add(new Grouping<string, Todo>(finishedTodoColor, FinishedTodos.Where(t => t.Color == finishedTodoColor)));
                 }
             }
             catch (Exception ex)
@@ -83,7 +83,7 @@ namespace Grind.ViewsModels
 
                 FinishedTodos.Remove(todo);
 
-                // This part of the code can be optimized by just removing an item in a group not clearing the whole todo
+                // This part of the code can be optimized by just removing an item in a group not clearing the whole todo (I don't know how btw)
                 FinishedTodoGroups.Clear();
 
                 HashSet<string> finishedTodoColors = new();
