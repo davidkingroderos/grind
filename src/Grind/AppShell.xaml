@@ -25,16 +25,16 @@
         <Tab Title="Todos" Icon="{AppThemeBinding Light=checklist_light.svg, Dark=checklist_dark.svg}">
             <ShellContent
                 Title="Todo"
-                ContentTemplate="{DataTemplate view:TodosPage}"
+                ContentTemplate="{DataTemplate view:UnfinishedTodosPage}"
                 Icon="{AppThemeBinding Light=checklist_light.svg,
                                        Dark=checklist_dark.svg}"
                 Route="Todo" />
             <ShellContent
-                Title="Completed"
-                ContentTemplate="{DataTemplate view:CompletedTodosPage}"
+                Title="Finished"
+                ContentTemplate="{DataTemplate view:FinishedUnfinishedTodosPage}"
                 Icon="{AppThemeBinding Light=checklist_light.svg,
                                        Dark=checklist_dark.svg}"
-                Route="Completed" />
+                Route="Finished" />
         </Tab>
         <Tab Title="Tools" Icon="{AppThemeBinding Light=tool_light.svg, Dark=tool_dark.svg}">
             <ShellContent
