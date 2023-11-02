@@ -7,11 +7,20 @@
     Title="{Binding Title}"
     x:DataType="viewmodel:AddTodoViewModel">
     <VerticalStackLayout>
-        <Entry Placeholder="Name" Text="{Binding Name}" />
-        <Entry Placeholder="Description" Text="{Binding Description}" />
-        <DatePicker Date="{Binding DeadlineDate}" />
-        <TimePicker Time="{Binding DeadlineDate}" />
-        <Picker Title="Color" SelectedItem="{Binding Color}">
+        <Entry
+            Margin="10,5"
+            Placeholder="Name"
+            Text="{Binding Name}" />
+        <Entry
+            Margin="10,5"
+            Placeholder="Description"
+            Text="{Binding Description}" />
+        <DatePicker Margin="10,5" Date="{Binding DeadlineDate}" />
+        <TimePicker Margin="10,5" Time="{Binding DeadlineDate}" />
+        <Picker
+            Title="Color"
+            Margin="10,5"
+            SelectedItem="{Binding Color}">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Rosewater</x:String>
@@ -31,6 +40,9 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        <Button Command="{Binding AddTodoCommand}" Text="Add" />
+        <Button
+            Margin="10,5"
+            Command="{Binding AddTodoCommand}"
+            Text="Add" />
     </VerticalStackLayout>
 </ContentPage>
