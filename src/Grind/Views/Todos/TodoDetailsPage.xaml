@@ -15,5 +15,38 @@
         <Label Text="{Binding Todo.DateCreated}" />
         <Label Text="{Binding Todo.DeadlineDate}" />
         <Label Text="{Binding Todo.Color}" />
+        <Entry
+            Margin="10,5"
+            Placeholder="Name"
+            Text="{Binding Todo.Name}" />
+        <Entry
+            Margin="10,5"
+            Placeholder="Description"
+            Text="{Binding Todo.Description}" />
+        <DatePicker Margin="10,5" Date="{Binding Todo.DeadlineDate}" />
+        <TimePicker Margin="10,5" Time="{Binding Todo.DeadlineDate}" />
+        <Picker
+            Title="Color"
+            Margin="10,5"
+            SelectedItem="{Binding Todo.Color}">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Rosewater</x:String>
+                    <x:String>Flamingo</x:String>
+                    <x:String>Pink</x:String>
+                    <x:String>Mauve</x:String>
+                    <x:String>Red</x:String>
+                    <x:String>Maroon</x:String>
+                    <x:String>Peach</x:String>
+                    <x:String>Yellow</x:String>
+                    <x:String>Green</x:String>
+                    <x:String>Teal</x:String>
+                    <x:String>Sky</x:String>
+                    <x:String>Sapphire</x:String>
+                    <x:String>Blue</x:String>
+                    <x:String>Lavender</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
     </VerticalStackLayout>
 </ContentPage>
