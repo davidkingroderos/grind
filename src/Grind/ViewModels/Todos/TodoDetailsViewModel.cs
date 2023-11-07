@@ -37,21 +37,24 @@ namespace Grind.ViewsModels
         [RelayCommand]
         private async Task UpdateTodoAsync()
         {
+            if (IsBusy)
+                return;
+
             try
             {
+                IsBusy = true;
 
-
-
-                await Shell.Current.CurrentPage.DisplayAlert("Success!",
-                    $"Todo updated", "OK");
-
-                await Shell.Current.GoToAsync("..");
+                 
+                
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                await Shell.Current.CurrentPage.DisplayAlert("Error!",
-                    $"Unable to add Todo: {ex.Message}", "OK");
+                await Shell.Current.DisplayAlert("Error!", $"Unable to get todos: {ex.Message}", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
     }
