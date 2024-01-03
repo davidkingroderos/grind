@@ -1,4 +1,4 @@
-using Grind.ViewsModels;
+using Grind.ViewModels;
 
 namespace Grind.Views;
 

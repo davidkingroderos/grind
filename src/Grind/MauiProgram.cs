@@ -1,7 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Grind.Controls;
 using Grind.Views;
-using Grind.ViewsModels;
+using Grind.ViewModels;
 using Microsoft.Extensions.Logging;
 
 namespace Grind

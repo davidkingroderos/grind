@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
     xmlns:model="clr-namespace:Grind.Models"
-    xmlns:viewmodel="clr-namespace:Grind.ViewsModels"
+    xmlns:viewmodel="clr-namespace:Grind.ViewModels"
     Title="Trackers"
     x:DataType="viewmodel:TrackersViewModel">
 
